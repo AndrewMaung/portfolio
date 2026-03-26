@@ -6,7 +6,7 @@ Personal portfolio website built using React, Tailwind CSS, and Vite to showcase
 
 A dark & techy personal portfolio website built with **React**, **Tailwind CSS**, and **Vite** — deployed on **Vercel**.
 
-🔗 **Live Site:** https://portfolio-fe0m6pfc6-ahmaungoos-projects.vercel.app?_vercel_share=LkBjGG5moNkCeiK9beMxkaat0goOxEnX
+🔗 **Live Site:** https://portfolio-jet-seven-21.vercel.app/
 
 ---
 
