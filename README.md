@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # portfolio
 Personal portfolio website built using React, Tailwind CSS, and Vite to showcase my projects, skills, and experience.
 =======
