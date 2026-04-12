@@ -66,7 +66,7 @@ export default function Hero() {
         >
           <span className="text-cyan">B-Tech IT Graduate</span>
           <span className="mx-2 text-text-muted">|</span>
-          <span className="text-purple">M-Tech Data Science Student</span>
+          <span className="text-purple">M-Tech Data Science Student and Teaching Assistant</span>
         </div>
 
         {/* Typewriter */}

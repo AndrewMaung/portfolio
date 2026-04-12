@@ -2,7 +2,7 @@ const stats = [
   { label: 'Degree', value: 'B-Tech IT' },
   { label: 'Pursuing', value: 'M-Tech DS' },
   { label: 'Focus', value: 'ML & AI' },
-  { label: 'Status', value: 'Available' },
+  { label: 'Position', value: 'Teaching Assistant - Computer Engineering AI ML DS Dept, Marwadi University' },
 ]
 
 export default function About() {
@@ -66,7 +66,7 @@ export default function About() {
                 <span className="text-green">~</span> whoami
               </div>
               <div className="text-text-secondary mt-1">
-                Ah Maung Oo — Data Science Student
+                Ah Maung Oo — Teaching Assistant & Data Science Student
               </div>
               <div className="text-text-muted mt-1">
                 <span className="text-green">~</span> cat interests.txt
