@@ -1,38 +1,40 @@
-import { downloadCV } from '../utils/downloadCV'
+import { ArrowDown } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
-      {/* Subtle left accent line */}
-      <div className="absolute left-0 top-1/4 w-1 h-32 bg-gradient-to-b from-accent to-transparent" />
-
-      <div className="max-w-5xl mx-auto px-6 w-full relative z-10">
-        {/* Staggered typography */}
-        <div className="space-y-2 mb-8">
-          <h1
-            className="font-serif text-7xl md:text-8xl font-bold text-text-primary opacity-0-start animate-fade-up"
-            style={{ animationDelay: '0s', animationFillMode: 'forwards' }}
-          >
-            Ah Maung Oo
+    <section className="min-h-screen pt-32 pb-16 px-6 flex flex-col justify-center items-center">
+      <div className="max-w-3xl mx-auto text-center space-y-8">
+        {/* Main Heading */}
+        <div className="space-y-4 animate-slide-up">
+          <h1 className="text-5xl md:text-7xl font-bold font-serif tracking-tight leading-tight">
+            Building AI & Data Solutions
           </h1>
+          <p className="text-xl md:text-2xl text-dark-400 font-light">
+            Data Scientist & AI Enthusiast crafting intelligent systems and data-driven insights.
+          </p>
         </div>
 
-        {/* Mono tagline */}
-        <div
-          className="mono-accent mb-8 opacity-0-start animate-fade-up"
-          style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
-        >
-          Data Scientist · Deep Learning · Computer Vision
-        </div>
-
-        {/* Description */}
-        <p
-          className="text-lg text-text-secondary max-w-2xl leading-relaxed opacity-0-start animate-fade-up"
-          style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
-        >
-          B-Tech IT graduate pursuing M-Tech in Data Science. Passionate about building intelligent systems 
-          through machine learning and data-driven insights. Teaching Assistant at Marwadi University.
+        {/* Subtitle */}
+        <p className="text-dark-500 text-lg max-w-2xl mx-auto animate-slide-up stagger-2">
+          M-Tech in Data Science | B-Tech IT Graduate | Passionate about machine learning, research, and solving complex problems through data.
         </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8 animate-slide-up stagger-3">
+          <a href="#projects" className="btn-primary">
+            View My Work
+          </a>
+          <a href="#contact" className="btn-secondary">
+            Get in Touch
+          </a>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="pt-12 animate-bounce">
+          <a href="#about" className="inline-block text-dark-500 hover:text-dark-50 transition-colors">
+            <ArrowDown size={24} />
+          </a>
+        </div>
       </div>
     </section>
   )

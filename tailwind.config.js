@@ -4,44 +4,51 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        sans: ['Inter', 'sans-serif'],
         serif: ['Fraunces', 'serif'],
         mono: ['IBM Plex Mono', 'monospace'],
-        sans: ['Inter', 'sans-serif'],
       },
       colors: {
-        base: {
-          bg: '#f9f7f4',
-          card: '#fdfcfa',
-          border: '#e5dfd8',
-          hover: '#f0ebe5',
-        },
-        text: {
-          primary: '#1a1a1a',
-          secondary: '#6b6b6b',
-          muted: '#999999',
+        dark: {
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
+          950: '#0a0a0a',
         },
         accent: {
-          DEFAULT: '#2d4a3a',
-          hover: '#1f3a2f',
-          light: '#e8ede9',
+          blue: '#3b82f6',
+          emerald: '#10b981',
+          purple: '#8b5cf6',
+          cyan: '#06b6d4',
         },
       },
       spacing: {
-        section: '48px',
-        subsection: '24px',
+        section: '5rem',
       },
       animation: {
-        'fade-up': 'fadeUp 0.6s ease-out forwards',
-        'underline-in': 'underlineIn 0.3s ease-out forwards',
+        'fade-in': 'fadeIn 0.8s ease-out forwards',
+        'slide-up': 'slideUp 0.8s ease-out forwards',
+        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
       },
       keyframes: {
-        fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(10px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
-        underlineIn: {
-          '0%': { width: '0' },
-          '100%': { width: '100%' },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        fadeInUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
         },
       },
     },

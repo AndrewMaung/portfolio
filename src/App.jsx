@@ -2,9 +2,10 @@ import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
-import Skills from './components/Skills'
+import Experience from './components/Experience'
 import Projects from './components/Projects'
-import Education from './components/Education'
+import Publications from './components/Publications'
+import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -20,19 +21,22 @@ export default function App() {
       },
       { threshold: 0.1 }
     )
+
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
+
     return () => observer.disconnect()
   }, [])
 
   return (
-    <div>
+    <div className="min-h-screen bg-dark-950">
       <Navbar />
-      <main>
+      <main className="pt-16">
         <Hero />
         <About />
-        <Skills />
+        <Experience />
         <Projects />
-        <Education />
+        <Publications />
+        <Skills />
         <Contact />
       </main>
       <Footer />

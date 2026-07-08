@@ -1,33 +1,45 @@
-const skills = {
-  'Programming': ['Python', 'JavaScript', 'SQL', 'HTML/CSS'],
-  'Data Science & ML': ['Machine Learning', 'TensorFlow', 'Scikit-learn', 'Pandas', 'NumPy', 'Data Visualization'],
-  'Web Dev': ['React', 'Vite', 'Tailwind CSS', 'REST APIs'],
-  'Tools': ['Jupyter', 'Git', 'Kaggle', 'Google Colab'],
-}
-
 export default function Skills() {
-  return (
-    <section id="skills" className="py-24 max-w-5xl mx-auto px-6">
-      <div className="reveal">
-        {/* Section header */}
-        <div className="mb-16">
-          <h2 className="font-serif text-5xl font-bold text-text-primary mb-2">
-            Skills
-          </h2>
-          <div className="w-12 h-1 bg-accent" />
-        </div>
+  const skillsCategories = [
+    {
+      category: 'Machine Learning',
+      skills: ['TensorFlow', 'PyTorch', 'scikit-learn', 'XGBoost', 'LightGBM', 'Keras'],
+    },
+    {
+      category: 'Data Science',
+      skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Plotly', 'SQL'],
+    },
+    {
+      category: 'Programming',
+      skills: ['Python', 'JavaScript', 'SQL', 'Java', 'R', 'Bash'],
+    },
+    {
+      category: 'Web & DevOps',
+      skills: ['React', 'Node.js', 'FastAPI', 'Docker', 'AWS', 'Git'],
+    },
+    {
+      category: 'NLP & CV',
+      skills: ['NLTK', 'spaCy', 'Transformers', 'OpenCV', 'YOLO', 'HuggingFace'],
+    },
+    {
+      category: 'Databases',
+      skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Elasticsearch', 'DynamoDB', 'Firebase'],
+    },
+  ]
 
-        <div className="space-y-8">
-          {Object.entries(skills).map(([category, items]) => (
-            <div key={category} className="pb-6 border-b border-base-border last:border-b-0">
-              <h3 className="mono-accent mb-4">
-                {category}
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {items.map((skill) => (
+  return (
+    <section id="skills" className="py-section px-6 bg-dark-900/50">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="section-title">Skills & Expertise</h2>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {skillsCategories.map((category, index) => (
+            <div key={index} className="card-base reveal" style={{ animationDelay: `${index * 0.1}s` }}>
+              <h3 className="text-lg font-bold mb-4 text-accent-blue">{category.category}</h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="inline-block text-sm text-text-secondary border border-base-border px-3 py-1 hover:border-accent hover:text-accent transition-colors"
+                    className="inline-block px-3 py-2 bg-dark-800 border border-dark-700 rounded-lg text-sm text-dark-300 hover:border-accent-blue transition-colors duration-300"
                   >
                     {skill}
                   </span>

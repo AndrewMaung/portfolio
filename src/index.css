@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,75 +16,80 @@
   }
 
   body {
-    background-color: #f9f7f4;
-    color: #1a1a1a;
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
+    @apply bg-dark-950 text-dark-50 font-sans overflow-x-hidden;
+    line-height: 1.6;
   }
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
   }
+
   ::-webkit-scrollbar-track {
-    background: #f9f7f4;
+    @apply bg-dark-950;
   }
+
   ::-webkit-scrollbar-thumb {
-    background: #d4cfc8;
-    border-radius: 4px;
+    @apply bg-dark-700 rounded-full;
   }
+
   ::-webkit-scrollbar-thumb:hover {
-    background: #b8b0a6;
+    @apply bg-dark-600;
+  }
+
+  a {
+    @apply transition-colors duration-300;
   }
 }
 
-@layer utilities {
-  .mono-accent {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #2d4a3a;
+@layer components {
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold tracking-tight mb-12 font-serif;
   }
 
-  .serif-display {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
+  .section-subtitle {
+    @apply text-dark-400 text-lg mb-8 max-w-2xl;
   }
 
-  .opacity-0-start {
-    opacity: 0;
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-accent-blue hover:bg-accent-blue/80 text-white rounded-lg font-medium transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-dark-700 hover:border-dark-600 text-dark-50 rounded-lg font-medium transition-all duration-300 hover:bg-dark-900;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-4 py-2 text-dark-400 hover:text-dark-50 transition-colors duration-300 font-medium;
+  }
+
+  .link-accent {
+    @apply text-accent-blue hover:text-accent-blue/80 underline underline-offset-4 transition-colors duration-300;
+  }
+
+  .card-base {
+    @apply bg-dark-900 border border-dark-800 rounded-xl p-6 transition-all duration-300 hover:border-dark-700;
+  }
+
+  .reveal {
+    @apply opacity-0 translate-y-5 transition-all duration-700 ease-out;
+  }
+
+  .reveal.visible {
+    @apply opacity-100 translate-y-0;
   }
 }
 
-/* Section reveal animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Utility animations */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Link underline animation */
-.link-accent {
-  position: relative;
-  color: #2d4a3a;
-  text-decoration: none;
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
 }
 
-.link-accent::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #2d4a3a;
-  transition: width 0.3s ease-out;
-}
-
-.link-accent:hover::after {
-  width: 100%;
-}
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }

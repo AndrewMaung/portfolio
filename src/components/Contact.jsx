@@ -1,50 +1,63 @@
-import { downloadCV } from '../utils/downloadCV'
+import { Mail, Linkedin, Github, ExternalLink } from 'lucide-react'
 
 export default function Contact() {
-  return (
-    <section id="contact" className="py-24 max-w-5xl mx-auto px-6">
-      <div className="reveal">
-        {/* Section header */}
-        <div className="mb-8">
-          <h2 className="font-serif text-5xl font-bold text-text-primary mb-2">
-            Get in Touch
-          </h2>
-          <div className="w-12 h-1 bg-accent" />
-        </div>
+  const contactLinks = [
+    {
+      icon: Mail,
+      label: 'Email',
+      value: 'hello@example.com',
+      href: 'mailto:hello@example.com',
+    },
+    {
+      icon: Linkedin,
+      label: 'LinkedIn',
+      value: 'linkedin.com/in/ahmaunggoo',
+      href: 'https://linkedin.com/in/ahmaunggoo',
+    },
+    {
+      icon: Github,
+      label: 'GitHub',
+      value: 'github.com/AndrewMaung',
+      href: 'https://github.com/AndrewMaung',
+    },
+  ]
 
-        <p className="text-text-secondary text-lg max-w-2xl leading-relaxed mb-12">
-          I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hello, feel free to reach out!
+  return (
+    <section id="contact" className="py-section px-6">
+      <div className="max-w-2xl mx-auto text-center">
+        <h2 className="section-title">Let's Connect</h2>
+        <p className="text-dark-300 text-lg mb-12">
+          I'm always open to collaborating on exciting projects, research opportunities, or just having a conversation about AI and data science.
         </p>
 
-        <div className="flex flex-col gap-4">
-          <a
-            href="mailto:maungoo2004@gmail.com"
-            className="link-accent font-mono text-sm"
-          >
-            Email: maungoo2004@gmail.com
+        {/* Contact Grid */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {contactLinks.map((link, index) => {
+            const Icon = link.icon
+            return (
+              <a
+                key={index}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-base group hover:bg-dark-800 flex flex-col items-center"
+              >
+                <Icon className="w-8 h-8 text-accent-blue mb-3 group-hover:scale-110 transition-transform" />
+                <h3 className="font-bold mb-1">{link.label}</h3>
+                <p className="text-dark-400 text-sm group-hover:text-dark-50 transition-colors">{link.value}</p>
+              </a>
+            )
+          })}
+        </div>
+
+        {/* CTA */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="mailto:hello@example.com" className="btn-primary">
+            Send me an Email
           </a>
-          <a
-            href="https://www.linkedin.com/in/ah-maung-oo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-accent font-mono text-sm"
-          >
-            LinkedIn
+          <a href="https://github.com/AndrewMaung" target="_blank" rel="noopener noreferrer" className="btn-secondary gap-2">
+            <Github size={18} /> Visit GitHub
           </a>
-          <a
-            href="https://github.com/AndrewMaung"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-accent font-mono text-sm"
-          >
-            GitHub
-          </a>
-          <button
-            onClick={downloadCV}
-            className="link-accent font-mono text-sm text-left w-fit"
-          >
-            Download CV
-          </button>
         </div>
       </div>
     </section>

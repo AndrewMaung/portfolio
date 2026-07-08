@@ -1,10 +1,46 @@
+import { Heart } from 'lucide-react'
+
 export default function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
-    <footer className="bg-base-card border-t border-base-border py-12 mt-24">
-      <div className="max-w-5xl mx-auto px-6">
-        <p className="font-mono text-xs text-text-muted">
-          © 2026 Ah Maung Oo. All rights reserved.
-        </p>
+    <footer className="bg-dark-900 border-t border-dark-800 py-12 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
+          {/* About */}
+          <div>
+            <h3 className="font-bold mb-3">Ah Maung Oo</h3>
+            <p className="text-dark-400 text-sm">Data Scientist & AI Enthusiast building intelligent systems and data-driven solutions.</p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-bold mb-3">Quick Links</h3>
+            <ul className="space-y-2 text-sm text-dark-400">
+              <li><a href="#about" className="hover:text-dark-50 transition-colors">About</a></li>
+              <li><a href="#projects" className="hover:text-dark-50 transition-colors">Projects</a></li>
+              <li><a href="#contact" className="hover:text-dark-50 transition-colors">Contact</a></li>
+              <li><a href="https://github.com/AndrewMaung" target="_blank" rel="noopener noreferrer" className="hover:text-dark-50 transition-colors">GitHub</a></li>
+            </ul>
+          </div>
+
+          {/* Social */}
+          <div>
+            <h3 className="font-bold mb-3">Connect</h3>
+            <ul className="space-y-2 text-sm text-dark-400">
+              <li><a href="https://linkedin.com/in/ahmaunggoo" target="_blank" rel="noopener noreferrer" className="hover:text-dark-50 transition-colors">LinkedIn</a></li>
+              <li><a href="https://github.com/AndrewMaung" target="_blank" rel="noopener noreferrer" className="hover:text-dark-50 transition-colors">GitHub</a></li>
+              <li><a href="mailto:hello@example.com" className="hover:text-dark-50 transition-colors">Email</a></li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-dark-800 pt-8">
+          <p className="text-center text-dark-500 text-sm flex items-center justify-center gap-2">
+            Made with <Heart size={16} className="text-accent-blue" /> by Ah Maung Oo © {currentYear}
+          </p>
+        </div>
       </div>
     </footer>
   )

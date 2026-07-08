@@ -1,52 +1,58 @@
-const stats = [
-  { label: 'Degree', value: 'B-Tech IT' },
-  { label: 'Pursuing', value: 'M-Tech DS' },
-  { label: 'Focus', value: 'ML & AI' },
-  { label: 'Role', value: 'Teaching Assistant' },
-]
-
 export default function About() {
   return (
-    <section id="about" className="py-24 max-w-5xl mx-auto px-6">
-      <div className="reveal">
-        {/* Section header */}
-        <div className="mb-16">
-          <h2 className="font-serif text-5xl font-bold text-text-primary mb-2">
-            About
-          </h2>
-          <div className="w-12 h-1 bg-accent" />
-        </div>
+    <section id="about" className="py-section px-6 bg-dark-900/50">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="section-title">About Me</h2>
 
-        <div className="grid md:grid-cols-3 gap-12">
-          {/* Main text - 2 columns */}
-          <div className="md:col-span-2 space-y-4">
-            <p className="text-text-secondary leading-relaxed">
-              Hi! I'm Ah Maung Oo, a passionate technologist from the intersection of Information Technology and Data Science. 
-              I completed my B-Tech in IT and am currently deepening my expertise through an M-Tech in Data Science.
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="space-y-6 reveal">
+            <p className="text-lg text-dark-300 leading-relaxed">
+              I'm a passionate data scientist and AI enthusiast currently pursuing my M-Tech in Data Science. With a strong foundation in IT from my B-Tech, I specialize in building intelligent systems, machine learning models, and deriving actionable insights from complex datasets.
             </p>
-            <p className="text-text-secondary leading-relaxed">
-              I thrive on building data-driven solutions — from cleaning messy datasets and training machine learning models 
-              to visualizing insights that drive real decisions. My background in IT gives me a strong foundation in software 
-              engineering principles that I apply to every data pipeline I build.
+
+            <p className="text-lg text-dark-300 leading-relaxed">
+              My journey spans across machine learning, data analysis, research, and AI applications. I'm particularly interested in:
             </p>
-            <p className="text-text-secondary leading-relaxed">
-              When I'm not coding, I explore research papers, contribute to open-source projects, and sharpen my skills 
-              through Kaggle competitions.
-            </p>
+
+            <ul className="space-y-3 text-dark-300">
+              <li className="flex items-start gap-3">
+                <span className="text-accent-blue font-bold mt-1">→</span>
+                <span>Machine Learning & Deep Learning</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent-blue font-bold mt-1">→</span>
+                <span>Natural Language Processing</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent-blue font-bold mt-1">→</span>
+                <span>Data Visualization & Analytics</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent-blue font-bold mt-1">→</span>
+                <span>Research & Academic Contributions</span>
+              </li>
+            </ul>
           </div>
 
-          {/* Stats grid - 1 column */}
-          <div className="space-y-4">
-            {stats.map((s) => (
-              <div key={s.label} className="border-l-2 border-accent pl-4">
-                <div className="font-mono text-xs text-accent uppercase tracking-wider font-semibold mb-1">
-                  {s.label}
-                </div>
-                <div className="text-text-primary font-medium">
-                  {s.value}
-                </div>
-              </div>
-            ))}
+          {/* Right Stats */}
+          <div className="grid grid-cols-2 gap-6 reveal stagger-2">
+            <div className="card-base text-center">
+              <div className="text-3xl font-bold text-accent-blue mb-2">2+</div>
+              <p className="text-dark-400 text-sm">Years of Experience</p>
+            </div>
+            <div className="card-base text-center">
+              <div className="text-3xl font-bold text-accent-blue mb-2">10+</div>
+              <p className="text-dark-400 text-sm">Projects Completed</p>
+            </div>
+            <div className="card-base text-center">
+              <div className="text-3xl font-bold text-accent-emerald mb-2">5+</div>
+              <p className="text-dark-400 text-sm">Publications</p>
+            </div>
+            <div className="card-base text-center">
+              <div className="text-3xl font-bold text-accent-purple mb-2">100%</div>
+              <p className="text-dark-400 text-sm">Passion Driven</p>
+            </div>
           </div>
         </div>
       </div>

@@ -1,111 +1,88 @@
-import { useState, useEffect } from 'react'
-import { downloadCV } from '../utils/downloadCV'
-
-const links = ['about', 'skills', 'projects', 'education', 'contact']
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [active, setActive] = useState('')
+  const [isOpen, setIsOpen] = useState(false)
+  const profileImage = 'https://avatars.githubusercontent.com/u/47524506?v=4'
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    setMenuOpen(false)
-    setActive(id)
-  }
+  const navLinks = [
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Publications', href: '#publications' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Contact', href: '#contact' },
+  ]
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-base-bg/95 backdrop-blur-sm border-b border-base-border'
-          : 'bg-transparent'
-      }`}
-    >
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="font-mono text-sm font-semibold text-accent hover:text-accent-hover transition-colors"
-        >
-          AMO
-        </button>
+    <nav className="fixed w-full top-0 z-50 bg-dark-950/95 backdrop-blur-md border-b border-dark-800">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Logo with GitHub Profile Picture */}
+        <a href="#" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <img
+            src={profileImage}
+            alt="Ah Maung Oo"
+            className="w-10 h-10 rounded-full border border-dark-700 hover:border-accent-blue transition-colors duration-300"
+          />
+          <span className="text-lg font-bold hidden sm:inline">Ah Maung Oo</span>
+        </a>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
-            <li key={link}>
-              <button
-                onClick={() => scrollTo(link)}
-                className={`text-sm font-mono transition-colors duration-200 ${
-                  active === link
-                    ? 'text-accent font-semibold'
-                    : 'text-text-secondary hover:text-text-primary'
-                }`}
-              >
-                {link}
-              </button>
-            </li>
-          ))}
-          <li>
-            <button
-              onClick={downloadCV}
-              className="text-sm font-mono px-3 py-1.5 border border-accent text-accent hover:bg-accent hover:text-base-bg transition-colors duration-200"
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="text-dark-400 hover:text-dark-50 text-sm font-medium transition-colors duration-300"
             >
-              CV
-            </button>
-          </li>
-        </ul>
+              {link.name}
+            </a>
+          ))}
+          <a
+            href="https://github.com/AndrewMaung"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary text-xs"
+          >
+            GitHub
+          </a>
+        </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-text-secondary hover:text-text-primary transition-colors"
-          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden text-dark-50 hover:text-dark-400 transition-colors"
+          onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-            {menuOpen ? (
-              <>
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </>
-            ) : (
-              <>
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </>
-            )}
-          </svg>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </nav>
+      </div>
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-base-bg border-b border-base-border px-6 py-4">
-          {links.map((link) => (
-            <button
-              key={link}
-              onClick={() => scrollTo(link)}
-              className="block w-full text-left font-mono text-sm py-2 text-text-secondary hover:text-text-primary transition-colors"
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-dark-900 border-b border-dark-800 px-6 py-4">
+          <div className="flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-dark-400 hover:text-dark-50 font-medium transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </a>
+            ))}
+            <a
+              href="https://github.com/AndrewMaung"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary text-xs text-center"
             >
-              {link}
-            </button>
-          ))}
-          <button
-            onClick={() => { downloadCV(); setMenuOpen(false) }}
-            className="w-full mt-4 px-3 py-1.5 border border-accent text-accent font-mono text-sm hover:bg-accent hover:text-base-bg transition-colors"
-          >
-            Download CV
-          </button>
+              GitHub
+            </a>
+          </div>
         </div>
       )}
-    </header>
+    </nav>
   )
 }
