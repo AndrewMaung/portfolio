@@ -25,7 +25,7 @@ export default function App() {
   }, [])
 
   return (
-    <div className="scanline">
+    <div>
       <Navbar />
       <main>
         <Hero />

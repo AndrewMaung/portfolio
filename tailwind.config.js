@@ -4,44 +4,37 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        mono: ['"JetBrains Mono"', '"Fira Code"', 'monospace'],
-        sans: ['"IBM Plex Sans"', 'sans-serif'],
+        mono: ['Menlo', 'Monaco', 'monospace'],
+        sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
       },
       colors: {
         base: {
-          bg:      '#0a0e17',
-          surface: '#0f1724',
-          card:    '#131d2e',
-          border:  '#1e2d45',
-          hover:   '#1a2840',
+          bg:      '#ffffff',
+          surface: '#f8f9fa',
+          card:    '#f5f5f5',
+          border:  '#e5e5e5',
+          hover:   '#eeeeee',
         },
-        cyan:   { DEFAULT: '#00d4ff', dim: '#0097b8', glow: 'rgba(0,212,255,0.12)' },
-        green:  { DEFAULT: '#00ff88', dim: '#00b860' },
-        purple: { DEFAULT: '#a78bfa', dim: '#7c5cbf' },
         text: {
-          primary:   '#e2eaf7',
-          secondary: '#7a90b0',
-          muted:     '#3d5068',
+          primary:   '#000000',
+          secondary: '#666666',
+          muted:     '#999999',
         },
+        accent: '#0066cc',
       },
       animation: {
-        'fade-up':    'fadeUp 0.6s ease forwards',
-        'blink':      'blink 1s step-end infinite',
-        'scan':       'scan 3s linear infinite',
-        'pulse-slow': 'pulse 4s ease-in-out infinite',
+        'fade-in': 'fadeIn 0.5s ease',
+        'fade-up': 'fadeUp 0.5s ease forwards',
+        'pulse-slow': 'pulse 3s ease-in-out infinite',
       },
       keyframes: {
+        fadeIn: {
+          '0%':   { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
         fadeUp: {
-          '0%':   { opacity: '0', transform: 'translateY(20px)' },
+          '0%':   { opacity: '0', transform: 'translateY(10px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        blink: {
-          '0%, 100%': { opacity: '1' },
-          '50%':      { opacity: '0' },
-        },
-        scan: {
-          '0%':   { transform: 'translateY(-100%)' },
-          '100%': { transform: 'translateY(100vh)' },
         },
       },
     },
