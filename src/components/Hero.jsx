@@ -2,45 +2,37 @@ import { downloadCV } from '../utils/downloadCV'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 pb-16">
-      <div className="max-w-4xl mx-auto px-6 w-full">
-        {/* Main heading */}
-        <h1 className="text-5xl md:text-7xl font-bold text-black mb-6 animate-fade-up">
-          Ah Maung Oo
-        </h1>
+    <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
+      {/* Subtle left accent line */}
+      <div className="absolute left-0 top-1/4 w-1 h-32 bg-gradient-to-b from-accent to-transparent" />
 
-        {/* Subtitle */}
-        <p className="text-xl md:text-2xl text-text-secondary mb-6 animate-fade-up" style={{ animationDelay: '0.1s', animationFillMode: 'forwards', opacity: 0 }}>
-          B-Tech IT Graduate | M-Tech Data Science Student & Teaching Assistant
-        </p>
+      <div className="max-w-5xl mx-auto px-6 w-full relative z-10">
+        {/* Staggered typography */}
+        <div className="space-y-2 mb-8">
+          <h1
+            className="font-serif text-7xl md:text-8xl font-bold text-text-primary opacity-0-start animate-fade-up"
+            style={{ animationDelay: '0s', animationFillMode: 'forwards' }}
+          >
+            Ah Maung Oo
+          </h1>
+        </div>
+
+        {/* Mono tagline */}
+        <div
+          className="mono-accent mb-8 opacity-0-start animate-fade-up"
+          style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
+        >
+          Data Scientist · Deep Learning · Computer Vision
+        </div>
 
         {/* Description */}
-        <p className="text-lg text-text-secondary leading-relaxed mb-8 max-w-2xl animate-fade-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards', opacity: 0 }}>
-          Passionate about extracting insights from data and building intelligent systems. 
-          Currently bridging the gap between IT fundamentals and cutting-edge Data Science.
+        <p
+          className="text-lg text-text-secondary max-w-2xl leading-relaxed opacity-0-start animate-fade-up"
+          style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
+        >
+          B-Tech IT graduate pursuing M-Tech in Data Science. Passionate about building intelligent systems 
+          through machine learning and data-driven insights. Teaching Assistant at Marwadi University.
         </p>
-
-        {/* CTA buttons */}
-        <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: '0.3s', animationFillMode: 'forwards', opacity: 0 }}>
-          <button
-            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-8 py-3 bg-accent text-white font-medium rounded hover:bg-blue-700 transition-colors duration-200"
-          >
-            View My Work
-          </button>
-          <button
-            onClick={downloadCV}
-            className="px-8 py-3 bg-base-card text-black border border-base-border font-medium rounded hover:bg-base-hover transition-colors duration-200"
-          >
-            Download CV
-          </button>
-          <button
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="px-8 py-3 bg-base-card text-black border border-base-border font-medium rounded hover:bg-base-hover transition-colors duration-200"
-          >
-            Get in Touch
-          </button>
-        </div>
       </div>
     </section>
   )

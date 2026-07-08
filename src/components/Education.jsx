@@ -15,32 +15,36 @@ const education = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 max-w-4xl mx-auto px-6">
+    <section id="education" className="py-24 max-w-5xl mx-auto px-6">
       <div className="reveal">
-        <h2 className="text-3xl md:text-4xl font-bold text-black mb-12">
-          Education
-        </h2>
+        {/* Section header */}
+        <div className="mb-16">
+          <h2 className="font-serif text-5xl font-bold text-text-primary mb-2">
+            Education
+          </h2>
+          <div className="w-12 h-1 bg-accent" />
+        </div>
 
-        <div className="space-y-6">
+        <div className="space-y-8">
           {education.map((edu, idx) => (
-            <div
-              key={idx}
-              className="bg-base-surface border border-base-border rounded-lg p-6 hover:border-text-secondary transition-colors duration-300"
-            >
-              <div className="flex items-start justify-between gap-4 mb-2">
-                <h3 className="text-lg font-semibold text-black">
+            <div key={idx} className="flex gap-6">
+              {/* Year marker - monospace */}
+              <div className="mono-accent pt-1 text-sm font-semibold whitespace-nowrap text-accent flex-shrink-0">
+                {edu.year}
+              </div>
+
+              {/* Content with left border */}
+              <div className="pb-6 border-l-2 border-accent pl-6 flex-1 last:pb-0">
+                <h3 className="font-serif text-lg font-bold text-text-primary mb-1">
                   {edu.degree}
                 </h3>
-                <span className="text-sm text-text-muted font-medium whitespace-nowrap">
-                  {edu.year}
-                </span>
+                <p className="text-accent font-medium text-sm mb-2">
+                  {edu.school}
+                </p>
+                <p className="text-text-secondary text-sm">
+                  {edu.details}
+                </p>
               </div>
-              <p className="text-accent font-medium mb-2">
-                {edu.school}
-              </p>
-              <p className="text-text-secondary text-sm">
-                {edu.details}
-              </p>
             </div>
           ))}
         </div>

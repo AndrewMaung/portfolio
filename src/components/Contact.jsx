@@ -2,29 +2,32 @@ import { downloadCV } from '../utils/downloadCV'
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 max-w-4xl mx-auto px-6">
+    <section id="contact" className="py-24 max-w-5xl mx-auto px-6">
       <div className="reveal">
-        <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-          Get in Touch
-        </h2>
-        
-        <p className="text-text-secondary text-lg mb-8 max-w-2xl leading-relaxed">
-          I'm always interested in hearing about new projects and opportunities. Whether you have a question 
-          or just want to say hello, feel free to reach out!
+        {/* Section header */}
+        <div className="mb-8">
+          <h2 className="font-serif text-5xl font-bold text-text-primary mb-2">
+            Get in Touch
+          </h2>
+          <div className="w-12 h-1 bg-accent" />
+        </div>
+
+        <p className="text-text-secondary text-lg max-w-2xl leading-relaxed mb-12">
+          I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hello, feel free to reach out!
         </p>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-col gap-4">
           <a
             href="mailto:maungoo2004@gmail.com"
-            className="px-6 py-3 bg-accent text-white font-medium rounded hover:bg-blue-700 transition-colors"
+            className="link-accent font-mono text-sm"
           >
-            Send Email
+            Email: maungoo2004@gmail.com
           </a>
           <a
             href="https://www.linkedin.com/in/ah-maung-oo"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-base-card text-black border border-base-border font-medium rounded hover:bg-base-hover transition-colors"
+            className="link-accent font-mono text-sm"
           >
             LinkedIn
           </a>
@@ -32,13 +35,13 @@ export default function Contact() {
             href="https://github.com/AndrewMaung"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-base-card text-black border border-base-border font-medium rounded hover:bg-base-hover transition-colors"
+            className="link-accent font-mono text-sm"
           >
             GitHub
           </a>
           <button
             onClick={downloadCV}
-            className="px-6 py-3 bg-base-card text-black border border-base-border font-medium rounded hover:bg-base-hover transition-colors"
+            className="link-accent font-mono text-sm text-left w-fit"
           >
             Download CV
           </button>

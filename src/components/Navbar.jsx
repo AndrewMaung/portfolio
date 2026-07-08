@@ -24,17 +24,17 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-sm border-b border-base-border shadow-sm'
-          : 'bg-white'
+          ? 'bg-base-bg/95 backdrop-blur-sm border-b border-base-border'
+          : 'bg-transparent'
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="text-lg font-semibold text-black hover:text-accent transition-colors"
+          className="font-mono text-sm font-semibold text-accent hover:text-accent-hover transition-colors"
         >
-          Ah Maung Oo
+          AMO
         </button>
 
         {/* Desktop links */}
@@ -43,33 +43,33 @@ export default function Navbar() {
             <li key={link}>
               <button
                 onClick={() => scrollTo(link)}
-                className={`text-sm transition-colors duration-200 ${
+                className={`text-sm font-mono transition-colors duration-200 ${
                   active === link
-                    ? 'text-accent font-medium'
-                    : 'text-text-secondary hover:text-black'
+                    ? 'text-accent font-semibold'
+                    : 'text-text-secondary hover:text-text-primary'
                 }`}
               >
-                {link.charAt(0).toUpperCase() + link.slice(1)}
+                {link}
               </button>
             </li>
           ))}
           <li>
             <button
               onClick={downloadCV}
-              className="text-sm px-4 py-2 bg-accent text-white rounded hover:bg-blue-700 transition-colors duration-200"
+              className="text-sm font-mono px-3 py-1.5 border border-accent text-accent hover:bg-accent hover:text-base-bg transition-colors duration-200"
             >
-              Download CV
+              CV
             </button>
           </li>
         </ul>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-text-secondary hover:text-black transition-colors"
+          className="md:hidden text-text-secondary hover:text-text-primary transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             {menuOpen ? (
               <>
                 <line x1="18" y1="6" x2="6" y2="18" />
@@ -88,19 +88,19 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-b border-base-border px-6 py-4">
+        <div className="md:hidden bg-base-bg border-b border-base-border px-6 py-4">
           {links.map((link) => (
             <button
               key={link}
               onClick={() => scrollTo(link)}
-              className="block w-full text-left text-sm py-3 text-text-secondary hover:text-black transition-colors"
+              className="block w-full text-left font-mono text-sm py-2 text-text-secondary hover:text-text-primary transition-colors"
             >
-              {link.charAt(0).toUpperCase() + link.slice(1)}
+              {link}
             </button>
           ))}
           <button
             onClick={() => { downloadCV(); setMenuOpen(false) }}
-            className="w-full mt-3 px-4 py-2 bg-accent text-white rounded text-sm hover:bg-blue-700 transition-colors"
+            className="w-full mt-4 px-3 py-1.5 border border-accent text-accent font-mono text-sm hover:bg-accent hover:text-base-bg transition-colors"
           >
             Download CV
           </button>
