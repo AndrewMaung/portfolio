@@ -33,7 +33,7 @@ export default function Skills() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillsCategories.map((category, index) => (
-            <div key={index} className="card-base reveal" style={{ animationDelay: `${index * 0.1}s` }}>
+            <div key={index} className="card-base">
               <h3 className="text-lg font-bold mb-4 text-accent-blue">{category.category}</h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (

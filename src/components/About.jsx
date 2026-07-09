@@ -1,21 +1,22 @@
 export default function About() {
   return (
-    <section id="about" className="py-section px-6 bg-dark-900/50">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="section-title">About Me</h2>
+    <section id="about" className="pt-32 pb-section px-6 bg-dark-900/50 min-h-[80vh] flex items-center">
+      <div className="max-w-5xl mx-auto w-full">
+        <div className="mb-12">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">Ah Maung Oo</h1>
+          <p className="text-xl md:text-2xl text-dark-300 font-medium">Data Scientist & AI Researcher</p>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
-          <div className="space-y-6 reveal">
+          <div className="space-y-6">
             <p className="text-lg text-dark-300 leading-relaxed">
-              I'm a passionate data scientist and AI enthusiast currently pursuing my M-Tech in Data Science. With a strong foundation in IT from my B-Tech, I specialize in building intelligent systems, machine learning models, and deriving actionable insights from complex datasets.
+              I am a data scientist specializing in building intelligent systems and machine learning models. 
+              Currently pursuing my M-Tech in Data Science, I focus on applying machine learning and deep 
+              learning to complex datasets to extract actionable insights and solve practical problems.
             </p>
 
-            <p className="text-lg text-dark-300 leading-relaxed">
-              My journey spans across machine learning, data analysis, research, and AI applications. I'm particularly interested in:
-            </p>
-
-            <ul className="space-y-3 text-dark-300">
+            <ul className="space-y-3 text-dark-300 pt-4">
               <li className="flex items-start gap-3">
                 <span className="text-accent-blue font-bold mt-1">→</span>
                 <span>Machine Learning & Deep Learning</span>
@@ -28,30 +29,26 @@ export default function About() {
                 <span className="text-accent-blue font-bold mt-1">→</span>
                 <span>Data Visualization & Analytics</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-accent-blue font-bold mt-1">→</span>
-                <span>Research & Academic Contributions</span>
-              </li>
             </ul>
           </div>
 
           {/* Right Stats */}
-          <div className="grid grid-cols-2 gap-6 reveal stagger-2">
-            <div className="card-base text-center">
-              <div className="text-3xl font-bold text-accent-blue mb-2">2+</div>
-              <p className="text-dark-400 text-sm">Years of Experience</p>
+          <div className="grid grid-cols-2 gap-6">
+            <div className="card-base text-center p-8">
+              <div className="text-4xl font-bold text-accent-blue mb-2">2+</div>
+              <p className="text-dark-400 text-sm font-medium">Years Experience</p>
             </div>
-            <div className="card-base text-center">
-              <div className="text-3xl font-bold text-accent-blue mb-2">10+</div>
-              <p className="text-dark-400 text-sm">Projects Completed</p>
+            <div className="card-base text-center p-8">
+              <div className="text-4xl font-bold text-accent-blue mb-2">10+</div>
+              <p className="text-dark-400 text-sm font-medium">Projects</p>
             </div>
-            <div className="card-base text-center">
-              <div className="text-3xl font-bold text-accent-emerald mb-2">5+</div>
-              <p className="text-dark-400 text-sm">Publications</p>
+            <div className="card-base text-center p-8">
+              <div className="text-4xl font-bold text-accent-emerald mb-2">1</div>
+              <p className="text-dark-400 text-sm font-medium">Paper Published</p>
             </div>
-            <div className="card-base text-center">
-              <div className="text-3xl font-bold text-accent-purple mb-2">100%</div>
-              <p className="text-dark-400 text-sm">Passion Driven</p>
+            <div className="card-base text-center p-8">
+              <div className="text-4xl font-bold text-accent-purple mb-2">1</div>
+              <p className="text-dark-400 text-sm font-medium">Patent Published</p>
             </div>
           </div>
         </div>

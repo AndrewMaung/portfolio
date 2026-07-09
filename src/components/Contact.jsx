@@ -1,18 +1,18 @@
-import { Mail, Linkedin, Github, ExternalLink } from 'lucide-react'
+import { Mail, Linkedin, Github } from 'lucide-react'
 
 export default function Contact() {
   const contactLinks = [
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@example.com',
-      href: 'mailto:hello@example.com',
+      value: 'ahmaungoo24@gmail.com',
+      href: 'mailto:ahmaungoo24@gmail.com',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/ahmaunggoo',
-      href: 'https://linkedin.com/in/ahmaunggoo',
+      value: 'linkedin.com/in/ah-maung-oo-890bb826a',
+      href: 'https://www.linkedin.com/in/ah-maung-oo-890bb826a',
     },
     {
       icon: Github,
@@ -52,7 +52,7 @@ export default function Contact() {
 
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="mailto:hello@example.com" className="btn-primary">
+          <a href="mailto:ahmaungoo24@gmail.com" className="btn-primary">
             Send me an Email
           </a>
           <a href="https://github.com/AndrewMaung" target="_blank" rel="noopener noreferrer" className="btn-secondary gap-2">

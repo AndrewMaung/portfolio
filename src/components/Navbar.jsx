@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Download } from 'lucide-react'
+import { downloadCV } from '../utils/downloadCV'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -8,7 +9,6 @@ export default function Navbar() {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
     { name: 'Publications', href: '#publications' },
     { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
@@ -38,14 +38,22 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
-          <a
-            href="https://github.com/AndrewMaung"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-secondary text-xs"
-          >
-            GitHub
-          </a>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://github.com/AndrewMaung"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-dark-400 hover:text-dark-50 text-sm font-medium transition-colors duration-300"
+            >
+              GitHub
+            </a>
+            <button
+              onClick={downloadCV}
+              className="btn-primary text-xs py-2 px-4 gap-2 flex items-center"
+            >
+              <Download size={16} /> CV
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -76,10 +84,16 @@ export default function Navbar() {
               href="https://github.com/AndrewMaung"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary text-xs text-center"
+              className="text-dark-400 hover:text-dark-50 font-medium transition-colors"
             >
               GitHub
             </a>
+            <button
+              onClick={downloadCV}
+              className="btn-primary text-sm flex items-center justify-center gap-2 w-full mt-2"
+            >
+              <Download size={18} /> Download CV
+            </button>
           </div>
         </div>
       )}

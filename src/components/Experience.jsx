@@ -1,6 +1,14 @@
 export default function Experience() {
   const experiences = [
     {
+      role: 'Co-Founder',
+      company: 'DatarrX',
+      logo: '/datarrx-logo.png',
+      period: '2025 - Present',
+      description: 'Co-founding DatarrX, an open-source research foundation dedicated to low-resource language processing and building robust digital and AI/NLP datasets for the Burmese language.',
+      skills: ['NLP', 'Open Source', 'Dataset Curation', 'AI Research', 'Python'],
+    },
+    {
       role: 'Teaching Assistant',
       company: 'Marwadi University',
       period: 'Apr 2026 - Present',
@@ -26,17 +34,26 @@ export default function Experience() {
   return (
     <section id="experience" className="py-section px-6">
       <div className="max-w-4xl mx-auto">
-        <h2 className="section-title">Experience</h2>
+        <h2 className="section-title">Experience & Organizations</h2>
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <div key={index} className="card-base reveal group hover:bg-dark-800/80" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold mb-1">{exp.role}</h3>
-                  <p className="text-accent-blue font-medium">{exp.company}</p>
+            <div key={index} className="card-base group hover:bg-dark-800/85">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4">
+                <div className="flex items-center gap-4">
+                  {exp.logo && (
+                    <img
+                      src={exp.logo}
+                      alt={`${exp.company} Logo`}
+                      className="w-12 h-12 rounded-lg object-contain border border-dark-700 bg-dark-950 p-1 flex-shrink-0"
+                    />
+                  )}
+                  <div>
+                    <h3 className="text-xl font-bold mb-1 text-dark-50">{exp.role}</h3>
+                    <p className="text-accent-blue font-medium">{exp.company}</p>
+                  </div>
                 </div>
-                <p className="text-dark-500 text-sm md:text-right mt-2 md:mt-0">{exp.period}</p>
+                <p className="text-dark-500 text-sm md:text-right">{exp.period}</p>
               </div>
 
               <p className="text-dark-300 mb-6 leading-relaxed">{exp.description}</p>

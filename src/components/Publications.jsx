@@ -1,54 +1,45 @@
 export default function Publications() {
-  const publications = [
-    {
-      title: 'Deep Learning for Anomaly Detection in IoT Networks',
-      authors: 'Ah Maung Oo, et al.',
-      conference: 'IEEE International Conference on Machine Learning',
-      year: '2026',
-      doi: '10.1109/ML.2026.123456',
-    },
-    {
-      title: 'Transformer-based Approaches for Low-Resource Language Processing',
-      authors: 'Ah Maung Oo, et al.',
-      conference: 'ACL 2026 Conference',
-      year: '2026',
-      doi: '10.18653/ACL.2026.789012',
-    },
-    {
-      title: 'Efficient Feature Engineering for Time Series Forecasting',
-      authors: 'Ah Maung Oo, et al.',
-      conference: 'International Journal of Data Science',
-      year: '2025',
-      doi: '10.1234/IJDS.2025.345678',
-    },
-  ]
-
   return (
     <section id="publications" className="py-section px-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="section-title">Publications & Research</h2>
 
-        <div className="space-y-6">
-          {publications.map((pub, index) => (
-            <div key={index} className="card-base reveal" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="text-xl font-bold flex-1">{pub.title}</h3>
-                <span className="text-sm text-dark-500 ml-4 whitespace-nowrap">{pub.year}</span>
-              </div>
+        <div className="card-base border-accent-blue/30 bg-dark-900/80 p-8 shadow-xl">
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <span className="px-3 py-1 bg-accent-blue/15 text-accent-blue border border-accent-blue/30 rounded-full text-xs font-semibold uppercase tracking-wider">
+              Published Online
+            </span>
+            <span className="text-sm text-dark-400">
+              Manuscript ID: <code className="text-dark-200 bg-dark-800 px-1.5 py-0.5 rounded text-xs font-mono">DMOR-2511-2038 (R2)</code>
+            </span>
+          </div>
 
-              <p className="text-accent-blue text-sm font-medium mb-2">{pub.conference}</p>
-              <p className="text-dark-400 text-sm mb-4">{pub.authors}</p>
+          <h3 className="text-2xl font-bold mb-3 leading-snug text-dark-50">
+            Explainable and Scalable Ensemble Decision-Support Framework for Multi-Commodity Price Forecasting in Agricultural Markets
+          </h3>
 
-              <a
-                href={`https://doi.org/${pub.doi}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-accent text-sm"
-              >
-                DOI: {pub.doi}
-              </a>
-            </div>
-          ))}
+          <p className="text-dark-400 text-sm mb-4">
+            <span className="font-semibold text-dark-300">Authors:</span> Rituraj Jain, Nay Oo Lwin, Rabnaz Dal, <span className="text-accent-blue font-semibold">Ah Maung Oo</span>
+          </p>
+
+          <p className="text-accent-blue text-sm font-medium mb-6">
+            Journal of Decisions and Operations Research
+          </p>
+
+          <p className="text-dark-300 mb-8 leading-relaxed text-base">
+            This research presents an explainable and scalable ensemble decision-support framework for forecasting multiple agricultural commodity prices. The work focuses on improving predictive performance while maintaining interpretability for real-world decision-making in agricultural markets.
+          </p>
+
+          <div>
+            <a
+              href="https://www.journal-dmor.ir/article_243447_en.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-5 py-2.5 bg-accent-blue/10 text-accent-blue border border-accent-blue/30 rounded-lg text-sm font-medium hover:bg-accent-blue hover:text-white transition-all duration-300"
+            >
+              Read Paper
+            </a>
+          </div>
         </div>
       </div>
     </section>
