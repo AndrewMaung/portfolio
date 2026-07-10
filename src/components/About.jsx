@@ -4,15 +4,15 @@ export default function About() {
       <div className="max-w-5xl mx-auto w-full">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight">Ah Maung Oo</h1>
-          <p className="text-xl md:text-2xl text-dark-300 font-medium">Data Scientist & AI Researcher</p>
+          <p className="text-xl md:text-2xl text-dark-300 font-medium">Data Science & AI/ML Enthusiast</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div className="space-y-6">
             <p className="text-lg text-dark-300 leading-relaxed">
-              I am a data scientist specializing in building intelligent systems and machine learning models. 
-              Currently pursuing my M-Tech in Data Science, I focus on applying machine learning and deep 
+              I am a data science enthusiast with a strong passion for building intelligent systems and machine learning models. 
+              Currently pursuing my M-Tech in Data Science, I am actively researching in the AI/ML field, focusing on applying machine learning and deep 
               learning to complex datasets to extract actionable insights and solve practical problems.
             </p>
 
